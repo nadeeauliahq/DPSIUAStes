@@ -8,7 +8,7 @@ const { Op } = require('sequelize');
 // Membuat laporan kebutuhan produk
 
 // authorize(['pegawai', 'admin']) -> pembatasan hak akses
-router.post('/make', authenticate, authorize(['pegawai', 'admin', 'manager']), async (req, res, next) => {
+router.post('/make', authenticate, authorize(['pegawai', 'admin']), async (req, res, next) => {
     try {
         const { productType,startperiod, endperiod } = req.body;
 
