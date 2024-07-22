@@ -1,5 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
     const Report = sequelize.define('Report', {
+        namalaporan: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         productType: {
             type: DataTypes.STRING,
             allowNull: false,
