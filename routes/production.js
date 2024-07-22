@@ -5,7 +5,7 @@ const { Production } = require('../models');
 const { authenticate, authorize } = require('../middleware/auth');
 
 // Memasukkan data produksi
-router.post('/input', authenticate, authorize(['pegawai', 'admin', 'manager']), async (req, res, next) => {
+router.post('/input', authenticate, authorize(['pegawai']), async (req, res, next) => {
     try {
         const { totalproduk, type, date, stokproduk } = req.body;
         const newProduction = await Production.create({ totalproduk, type, date, stokproduk });
